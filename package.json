@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "author": "Artur Zybin",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "crop-pictures": "node src/cropPictures.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arturzybin/music-utilities.git"
