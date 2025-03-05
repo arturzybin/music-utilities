@@ -1,0 +1,15 @@
+{
+  "name": "music-utilities",
+  "version": "1.0.0",
+  "author": "Artur Zybin",
+  "license": "MIT",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturzybin/music-utilities.git"
+  },
+  "dependencies": {
+    "node-id3": "^0.2.8",
+    "sharp": "^0.33.5"
+  }
+}
