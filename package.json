@@ -4,7 +4,8 @@
   "author": "Artur Zybin",
   "license": "MIT",
   "scripts": {
-    "crop-pictures": "node src/cropPictures.js"
+    "crop": "node src/cropPictures.js",
+    "rename": "node src/renameFiles.js"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   },
   "dependencies": {
     "node-id3": "^0.2.8",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "uuid": "^11.1.0"
   }
 }
