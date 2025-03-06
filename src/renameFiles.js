@@ -10,6 +10,11 @@ for (const fileName of fileNames) {
   const tags = NodeID3.read(currentPath)
 
   const newName = `${tags.title}___${tags.artist}___${uuidv4()}.${fileName.split('.').pop()}`
+    .replaceAll("/", '')
+    .replaceAll("\\", '')
+    .replaceAll("?", '')
+    .replaceAll("'", '')
+    .replaceAll("\"", '')
   const newPath = path.resolve(__dirname, '..', 'data', newName)
 
   fs.renameSync(currentPath, newPath)
