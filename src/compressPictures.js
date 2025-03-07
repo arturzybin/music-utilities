@@ -22,8 +22,8 @@ main().then(() => {
   console.log('='.repeat(100))
   console.log('Summary:')
   console.log(`${compressedFiles.length} file${compressedFiles.length === 1 ? '' : 's'} compressed`)
-  console.log(`${jpegFiles.length} file${jpegFiles.length === 1 ? '' : 's'} left untouched as they are .jpeg/.jpg format`)
-  console.log(`${untouchesPngFiles.length} .png file${untouchesPngFiles.length === 1 ? '' : 's'} left untouched because compression didn't reduce the size`)
+  console.log(`${jpegFiles.length} file${jpegFiles.length === 1 ? '' : 's'} left untouched as they are in .jpeg/.jpg format`)
+  console.log(`${untouchesPngFiles.length} file${untouchesPngFiles.length === 1 ? '' : 's'} in .png format left untouched because compression didn't reduce the size`)
   console.log(`${errors.length} file${errors.length === 1 ? '' : 's'} caused errors at some point during compression`)
 })
 
