@@ -3,19 +3,23 @@ const path = require('path')
 const NodeID3 = require('node-id3')
 const { v4: uuidv4 } = require('uuid')
 
-const fileNames = fs.readdirSync(path.resolve(__dirname, '..', 'data'))
+const directoryPath = path.resolve(__dirname, '..', 'data')
 
-for (const fileName of fileNames) {
-  const currentPath = path.resolve(__dirname, '..', 'data', fileName)
-  const tags = NodeID3.read(currentPath)
+const fileNames = fs.readdirSync(directoryPath)
 
-  const newName = `${tags.title}___${tags.artist}___${uuidv4()}.${fileName.split('.').pop()}`
+fileNames.forEach(fileName => {
+  const currentFilePath = path.resolve(directoryPath, fileName)
+
+  const tags = NodeID3.read(currentFilePath)
+
+  const newFileName = `${tags.title}___${tags.artist}___${uuidv4()}.${fileName.split('.').pop()}`
     .replaceAll("/", '')
     .replaceAll("\\", '')
     .replaceAll("?", '')
     .replaceAll("'", '')
     .replaceAll("\"", '')
-  const newPath = path.resolve(__dirname, '..', 'data', newName)
 
-  fs.renameSync(currentPath, newPath)
-}
+  const newFilePath = path.resolve(directoryPath, newFileName)
+
+  fs.renameSync(currentFilePath, newFilePath)
+})
