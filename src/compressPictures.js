@@ -28,12 +28,12 @@ async function main() {
 
     if (!tags.image) {
       errors.push(`"${fileName}": doesn't have an image`)
-      return
+      continue
     }
 
     if (typeof tags.image === 'string') {
       errors.push(`"${fileName}": an image isn't a buffer`)
-      return
+      continue
     }
 
     await sharp(tags.image.imageBuffer)
