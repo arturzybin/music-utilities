@@ -23,12 +23,13 @@ main().then(() => {
 })
 
 async function main() {
-  const fileNames = fs.readdirSync(path.resolve(__dirname, '..', 'data'))
+  const directoryPath = path.resolve(__dirname, '..', 'data')
+  const fileNames = fs.readdirSync(directoryPath)
 
   for (const fileName of fileNames) {
     console.log(`Working on "${fileName}"`)
 
-    const filePath = path.resolve(__dirname, '..', 'data', fileName)
+    const filePath = path.resolve(directoryPath, fileName)
     const tags = NodeID3.read(filePath)
 
     if (!tags.image) {
