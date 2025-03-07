@@ -15,8 +15,12 @@ fileNames.forEach(fileName => {
   const newFileName = `${tags.title}___${tags.artist}___${uuidv4()}.${fileName.split('.').pop()}`
     .replaceAll("/", '')
     .replaceAll("\\", '')
+    .replaceAll("|", '')
+    .replaceAll(":", '')
+    .replaceAll("*", '')
     .replaceAll("?", '')
-    .replaceAll("'", '')
+    .replaceAll("<", '')
+    .replaceAll(">", '')
     .replaceAll("\"", '')
 
   const newFilePath = path.resolve(directoryPath, newFileName)
