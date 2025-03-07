@@ -6,6 +6,7 @@
   "scripts": {
     "download-playlist": "yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --embed-metadata --convert-thumbnails png --embed-thumbnail --audio-quality 0 --output \"./data/%(title)s_%(artist)s_%(id)s.%(ext)s\" --yes-playlist \"https://music.youtube.com/playlist?list=PLgZAQ7jtyyXEoikQLgXB3w7u10NFrw9qv\"",
     "crop": "node src/cropPictures.js",
+    "compress": "node src/compressPictures.js",
     "mp3tag": "Mp3tag.exe /fp:\"C:\\Users\\Artur\\Desktop\\music-utilities\\data\"",
     "rename": "node src/renameFiles.js",
     "explorer": "start data"
